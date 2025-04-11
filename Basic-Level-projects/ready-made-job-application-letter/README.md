@@ -33,7 +33,7 @@ This is a beginner-friendly Python project that helps you create a professional 
 - Reads and shows you the letter in the terminal
 
 ---
-## INPUT
+## Input
 Here is an example of the Job Application Letter Generator input:
 
 ![Input](images/input.PNG)
