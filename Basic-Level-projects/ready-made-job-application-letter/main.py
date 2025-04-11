@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 print("----------------- Job Application Inputs -----------------")
@@ -40,5 +41,12 @@ Yours truly,
 Enclosure: {enclosure}
 """
 print("\n------------ Ready Made Application Letter ---------------")
-print(letter)
+desktop_path = os.path.join(os.path.expanduser("~"), "Desktop", "letter.txt")
 
+with open(desktop_path, "w") as file:
+    file.write(letter)
+
+with open(desktop_path, 'r') as file:
+    print(file.read())
+
+print("Your application letter has been saved as 'letter.txt' on your Desktop. Please check it.")
