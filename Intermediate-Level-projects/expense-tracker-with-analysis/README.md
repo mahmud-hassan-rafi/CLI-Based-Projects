@@ -1,41 +1,114 @@
-# Expense Tracker With Analysis CLI Based
+# Expense Tracker using Python and JSON
 
-A simple Expense Tracker Command Line Interface (CLI) application written in Python. This tool helps you track your daily expenses, view reports, and categorize your spending. The app stores the expenses in a JSON file and offers a summary of the expenses by category.
+This is a terminal-based **Expense Tracker** built using **Python**. It allows users to keep track of their daily expenses, view reports by category, and store all data in a JSON file (`history.json`) for persistence.
+
+---
 
 ## Features
 
-- **Add Expense**: Track your expenses by entering the amount, category, and description.
-- **View Summary Report**: View an overview of your expenses categorized by type.
-- **View All Expenses**: See all your expenses with detailed information.
-- **View History**: View previously recorded expense data from the `history.json` file.
+- Add expenses with amount, category, and description  
+- View total expenses by category  
+- See all historical expenses with timestamp  
+- Identify the category with the highest total expense  
+- Automatically saves and loads from `history.json`  
 
-## Requirements
+---
+
+## Technologies Used
+
+- Python standard libraries: `json`, `os`, `datetime`
+
+---
+
+## Getting Started
+
+### Requirements
 
 - Python 3.x
-- `json` module (comes pre-installed with Python)
-- `datetime` module (comes pre-installed with Python)
 
-## Installation
+### How to Run
 
-1. Clone the repository to your local machine:
+1. Clone this repository or copy the code to a file named `expense_tracker.py`
+2. Open terminal and run:
 
-   ```bash
-   git clone https://github.com/mahmud-hassan-rafi/CLI-Based-Projects/edit/main/Intermediate-Level-projects/expense-tracker-with-analysis.git
+```bash
+python expense_tracker.py
+```
 
-2. Navigate to the project directory:
-    ```bash
-    cd expense-tracker-cli
+---
 
-3. No external libraries are required to run this project. It uses built-in Python libraries like `datetime` and `json`.
+## Menu Options
 
-## Usage
+```
+========= EXPENSE TRACKER =========
+1. Add Expense
+2. View Summary Report
+3. View All Expenses
+4. Exit
+```
 
-Run the script:
+---
 
-    ```bash
-    python expense_tracker.py
+## Sample Output
 
-### Example Usage
-![INPUT](input.png)
+### Adding an Expense
 
+```
+Enter expense amount                      : ৳100
+Category (study/food/others)              : food
+For which reason? (Burger/Bus fare/others): Burger
+Want to add more expense? (y/n) : y
+```
 
+### Viewing Summary Report
+
+```
+Expense by Category:
+- food     : ৳320
+- study    : ৳150
+
+Most expense on a category: 
+>>> food  : ৳320
+```
+
+### Viewing All Expenses
+
+```
+Date                    | Category   | Amount  | Description
+________________________|____________|_________|_____________
+05 June, 2025 09:42 AM  | food       | 120     | Burger                        
+05 June, 2025 09:45 AM  | study      | 150     | Book Purchase                 
+________________________|____________|_________|_____________
+          Total Expense: ৳270
+```
+
+---
+
+## File Details
+
+- `main.py`: Main Python script
+- `history.json`: Auto-created JSON file that stores all expenses
+
+---
+
+## How It Works
+
+- All expenses are temporarily stored in `self.datalist` and saved to `history.json`
+- When the program starts or displays reports, it loads from this JSON file
+- Each entry includes amount, category, description, and timestamp
+- Reports are generated based on aggregated data from this file
+
+---
+
+## Improvements You Can Add
+
+- Export summary report to CSV or Excel
+- Monthly filters
+- GUI interface using Tkinter or PyQt
+- Password protection
+
+---
+
+## License
+
+This project is free to use for learning and personal use.
